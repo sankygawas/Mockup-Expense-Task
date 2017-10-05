@@ -1,0 +1,18 @@
+{
+  "name": "spiderG",
+  "description": "A project using AngularJS",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.6.3",
+    "angular-route": "~1.6.3",
+    "angular-loader": "~1.6.3",
+    "angular-mocks": "~1.6.3",
+    "html5-boilerplate": "^5.3.0",
+    "bootstrap":"^v4.0.0-beta",
+     "components-font-awesome": "^4.7.0",
+     "angular-animate":"*",
+     "animate.css":"*"
+  }
+}

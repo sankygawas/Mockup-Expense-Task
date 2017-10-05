@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" > 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bower_components/components-font-awesome/css/font-awesome.css" rel="stylesheet">
+  <link href="bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-blue mb-2">
+      <a class="navbar-brand" href="#">SpiderG</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav mr-auto">
+         <!--   <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown04">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li> -->
+           <li class="nav-item ml-5"  >
+            <a  class="nav-link active"  href="#"  onclick="toggleChat()" style="color:white"><i class="fa fa-bars fa-2x"></i></a>
+           
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0 mx-auto">
+          <input class="form-control" type="text" placeholder="Search">
+        </form>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item ml-5">
+              <a  class="nav-link active"  href="#"  onclick="toggleNotification()" style="color:white"><i class="fa fa-bell fa-2x"></i></a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+
+   
+    <!-- left SideBAr -->
+    <div id="chatSideBar" >
+      <chat-sidebar></chat-sidebar>
+    </div>
+
+    <div id="notificationSideBar" >
+      <notification-sidebar></notification-sidebar>
+    </div>
+    
+      <div ng-view></div>
+
+    
+
+
+
+ <script src="bower_components/jquery/dist/jquery.min.js"></script>
+ <script src="bower_components/popper.js/dist/umd/popper.min.js"></script>
+ <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+ <script src="bower_components/angular/angular.js"></script>
+ <script src="bower_components/angular-route/angular-route.js"></script>
+ <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+ <script src="app.js"></script>
+ <script src="view1/view1.js"></script>
+ <script src="view2/view2.js"></script>
+</body>
+</html>
