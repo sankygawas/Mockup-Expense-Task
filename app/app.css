@@ -24,6 +24,10 @@
   padding-right: 0.3em;
 }
 
+.navbar{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
 /*body {
   overflow-x: hidden;
 }
@@ -39,12 +43,13 @@ body {
   padding-bottom: 6rem;
   min-height: 100%;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  background-color: #eee;
+  background-color: #e2e1e0;
+   /*  background-color: white;*/
      overflow-x: hidden;
 }
 
 @media (min-width: 1200px){
-	.container { max-width: 1200px;}
+	.container { max-width: 1150px;}
 }
 .bg-blue{
 	
@@ -55,11 +60,12 @@ body {
 /*sidebar css*/
 
 .chatSidebar-content {
-    width: 15%;
+    width: 20%;
     height: 200px;
     background: white;
     border-radius: 5px;
-    margin-left: 10px;
+    /*margin-left: 10px;*/
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .chatSidebar-content-animation.ng-hide-remove {
@@ -79,11 +85,13 @@ body {
 }
 
 .notificationSidebar-content {
-    width: 15%;
+    width: 20%;
     height: 200px;
     background: white;
     border-radius: 5px;
-    margin-left: 10px;
+    /*
+     v  */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .notificationSidebar-content-animation.ng-hide-remove {
@@ -105,3 +113,68 @@ body {
 
 
 
+.card {
+  padding:10px;
+  margin-bottom:10px;
+  
+  
+}
+
+.card img{
+    border-radius: 50%;
+}
+
+.card .avatar{
+    width: 50px;
+}
+.card-header{
+    background-color: #4B515D;
+    color: white;
+}
+.card-block{
+    font-size: 13px;
+}
+
+.inline-block{
+    display: inline-block
+}
+
+.self-text{
+    width:40%;
+    margin-right: 0;
+}
+
+.mr-10{
+    margin-right: 20%;
+}
+.ml-10{
+    margin-left: 20%;
+}
+
+/* ng view anuimate*/
+
+.fade {
+   /* position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    opacity: 1;*/
+}
+.fade.ng-enter,
+.fade.ng-leave {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.fade.ng-enter {
+    opacity: 0;
+}
+.fade.ng-enter-active {
+    opacity: 1;
+}
+.fade.ng-leave {
+    opacity: 1;
+}
+.fade.ng-leave-active {
+    opacity: 0;
+}

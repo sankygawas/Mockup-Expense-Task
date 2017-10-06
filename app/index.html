@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp" > 
+<html lang="en" ng-app="spiderG" > 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bower_components/MDBootstrap/css/mdb.min.css" rel="stylesheet">
   <link href="bower_components/components-font-awesome/css/font-awesome.css" rel="stylesheet">
   <link href="bower_components/animate.css/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="app.css">
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-blue mb-2">
+    <nav class="navbar navbar-expand-md navbar-dark  light-blue darken-1 mb-2">
       <a class="navbar-brand" href="#">SpiderG</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" 
         aria-label="Toggle navigation">
@@ -34,7 +35,7 @@
             </div>
           </li> -->
            <li class="nav-item ml-5"  >
-            <a  class="nav-link active"  href="#"  onclick="toggleChat()" style="color:white"><i class="fa fa-bars fa-2x"></i></a>
+            <a  class="nav-link active"  onclick="toggleChat()" style="color:white"><i class="fa fa-bars fa-2x"></i></a>
            
           </li>
         </ul>
@@ -43,7 +44,7 @@
         </form>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item ml-5">
-              <a  class="nav-link active"  href="#"  onclick="toggleNotification()" style="color:white"><i class="fa fa-bell fa-2x"></i></a>
+              <a  class="nav-link active"   onclick="toggleNotification()" style="color:white"><i class="fa fa-bell fa-2x"></i></a>
             </li>
         </ul>
       </div>
@@ -51,7 +52,7 @@
 
    
     <!-- left SideBAr -->
-    <div id="chatSideBar" >
+    <div id="chatSideBar" ng-controller="chatSideBarCtrl">
       <chat-sidebar></chat-sidebar>
     </div>
 
@@ -59,7 +60,10 @@
       <notification-sidebar></notification-sidebar>
     </div>
     
-      <div ng-view></div>
+    <div class="view-animate-container">
+        <div ng-view class="view-animate"></div>
+    </div>
+      
 
     
 
@@ -68,11 +72,12 @@
  <script src="bower_components/jquery/dist/jquery.min.js"></script>
  <script src="bower_components/popper.js/dist/umd/popper.min.js"></script>
  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+ <script src="bower_components/MDBootstrap/js/mdb.min.js"></script>
  <script src="bower_components/angular/angular.js"></script>
  <script src="bower_components/angular-route/angular-route.js"></script>
  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
  <script src="app.js"></script>
- <script src="view1/view1.js"></script>
+ <script src="components/views/chat/chatHistory.js"></script>
  <script src="view2/view2.js"></script>
 </body>
 </html>

@@ -1,16 +1,16 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+angular.module('spiderG', [
   'ngRoute',
-  'myApp.view1',
+  'spiderG.chatHistory',
   'myApp.view2',
   'ngAnimate'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+    $routeProvider.otherwise({redirectTo: '/chatHistory/1'});
 }])
 
 //directive for chat sidebar
@@ -19,19 +19,11 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
         restrict: 'EA',
         templateUrl: 'components/sidebar/chatSideBar.html',
         controllerAs: 'ctrl',
-        controller: function ($scope) {
-	    var self = this; // self needed because toggle is not bound to this ctrl.
-        var screenWidth;
-                    
-        angular.extend(this, {
-            visible: true,
-            toggle: function () {
-                screenWidth = $window.innerWidth; //$(window).width();
-                self.visible = !self.visible; // toggle visibility
-                self.largeScreen = ( screenWidth >= 768 );
-			}
-        });
-        },
+        controller: 'chatSideBarCtrl',
+        link: function(scope, elm, attrs) {
+            //Way One
+           // scope.fromDirectiveFn({arg1:"some message"});
+        }
        /* link: function (scope, element, attr, ctrl) {
 			  
         }*/
@@ -44,20 +36,20 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 //directive for notification sidebar
 .directive('notificationSidebar', function ($window) {
     var directive = {
-        restrict: 'EA',
+        restrict: 'E',
         templateUrl: 'components/sidebar/notificationSideBar.html',
         controllerAs: 'NotificationCtrl',
         controller: function ($scope) {
-	    var self = this; // self needed because toggle is not bound to this ctrl.
-        var screenWidth;
-        angular.extend(this, {
-            visible: true,
-            toggle: function () {
-                screenWidth = $window.innerWidth; //$(window).width();
-                self.visible = !self.visible; // toggle visibility
-                self.largeScreen = ( screenWidth >= 768 );
-			}
-        });
+            var self = this; // self needed because toggle is not bound to this ctrl.
+            var screenWidth;
+            angular.extend(this, {
+                visible: true,
+                toggle: function () {
+                    screenWidth = $window.innerWidth; //$(window).width();
+                    self.visible = !self.visible; // toggle visibility
+                    self.largeScreen = ( screenWidth >= 768 );
+                }
+            });
         },
        /* link: function (scope, element, attr, ctrl) {
 			  
@@ -68,27 +60,10 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 })
 
 
-/*//controller for left side chat sidebar
-.controller('chatController',function($scope,$window){
-	    var self = this; // self needed because toggle is not bound to this ctrl.
-        var screenWidth;
-                    
-        angular.extend(this, {
-            visible: true,
-            toggle: function () {
-                screenWidth = $window.innerWidth; //$(window).width();
-                self.visible = !self.visible; // toggle visibility
-                self.largeScreen = ( screenWidth >= 768 );
-			}
-        });
-});
-*/
-
 
 //this method written out of angular scope to toggle sidebar from top navbar. 
 function toggleChat(){
 	var scope = angular.element(document.getElementById("chatSideBar")).scope();
-	console.log(scope.ctrl);
     scope.$apply(function (){
    		scope.ctrl.toggle();
     });
