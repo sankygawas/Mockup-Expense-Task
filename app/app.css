@@ -24,8 +24,22 @@
   padding-right: 0.3em;
 }
 
-.navbar{
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+.navbar .chatToggle{
+    width:10%;
+    margin-left:8%;
+}
+
+.form-inline .search{
+    background-color: white;
+    border-radius: 5px;
+    color:black !important;
+    padding:5px;
+    
+}
+.dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:focus, .dropdown .dropdown-menu .dropdown-item:hover{
+    background-color:#01579b; 
+    transition:all 0.3s;
 }
 
 /*body {
@@ -86,12 +100,10 @@ body {
 
 .notificationSidebar-content {
     width: 20%;
-    height: 200px;
-    background: white;
+
+    background: inherit;
     border-radius: 5px;
-    /*
-     v  */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+   
 }
 
 .notificationSidebar-content-animation.ng-hide-remove {
@@ -132,7 +144,7 @@ body {
     color: white;
 }
 .card-block{
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .inline-block{

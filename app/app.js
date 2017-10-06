@@ -9,15 +9,17 @@ angular.module('spiderG', [
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
-
-    $routeProvider.otherwise({redirectTo: '/chatHistory/1'});
+    $routeProvider.when('/profile',{
+        templateUrl:'views/profile/profile.html'
+    })
+    .otherwise({redirectTo: '/chatHistory/1'});
 }])
 
 //directive for chat sidebar
 .directive('chatSidebar', function ($window) {
     var directive = {
         restrict: 'EA',
-        templateUrl: 'components/sidebar/chatSideBar.html',
+        templateUrl: 'views/sidebar/chatSideBar.html',
         controllerAs: 'ctrl',
         controller: 'chatSideBarCtrl',
         link: function(scope, elm, attrs) {
@@ -37,9 +39,10 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 .directive('notificationSidebar', function ($window) {
     var directive = {
         restrict: 'E',
-        templateUrl: 'components/sidebar/notificationSideBar.html',
-        controllerAs: 'NotificationCtrl',
-        controller: function ($scope) {
+        templateUrl: 'views/sidebar/notificationSideBar.html',
+        controller: 'NotificationSideBarController',
+        controllerAs:'notificationBarCntrl'
+     /*   controller: function ($scope) {
             var self = this; // self needed because toggle is not bound to this ctrl.
             var screenWidth;
             angular.extend(this, {
@@ -50,7 +53,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
                     self.largeScreen = ( screenWidth >= 768 );
                 }
             });
-        },
+        }*/
        /* link: function (scope, element, attr, ctrl) {
 			  
         }*/
@@ -73,7 +76,7 @@ function toggleNotification(){
 	var scope = angular.element(document.getElementById("notificationSideBar")).scope();
 	console.log(scope.NotificationCtrl);
     scope.$apply(function (){
-   		scope.NotificationCtrl.toggle();
+   		scope.notificationBarCntrl.toggle();
     });
 }
 

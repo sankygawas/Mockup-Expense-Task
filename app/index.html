@@ -4,25 +4,26 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My AngularJS App</title>
-  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="bower_components/MDBootstrap/css/mdb.min.css" rel="stylesheet">
   <link href="bower_components/components-font-awesome/css/font-awesome.css" rel="stylesheet">
   <link href="bower_components/animate.css/animate.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="app.css">
 
 </head>
-<body class="white">
-    <nav class="navbar navbar-expand-md navbar-dark   light-blue darken-4 mb-2">
-      <a class="navbar-brand" href="#">SpiderG</a>
+<body class="light-grey">
+    <nav class="navbar navbar-expand-md navbar-dark light-blue darken-4 mb-2 py-0 z-depth-1">
+      <a class="navbar-brand py-0 my-0" href="#">
+            <img src="images/logo.png" height="60" alt="">
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" 
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExample04">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav chatToggle">
          <!--   <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
@@ -34,19 +35,33 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li> -->
-           <li class="nav-item ml-5"  >
+           <li class="nav-item mr-auto"  >
             <a  class="nav-link active"  onclick="toggleChat()" style="color:white"><i class="fa fa-bars fa-2x"></i></a>
            
           </li>
         </ul>
         <form class="form-inline my-2 my-md-0 mx-auto">
-          <input class="form-control" type="text" placeholder="Search">
+          <input class="form-control search" type="text" placeholder="Search"><i class="text-white fa fa-search " aria-hidden="true"></i>
         </form>
-        <ul class="navbar-nav mr-auto">
+          
+        <!--notification Toggle-->  
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item ml-5">
               <a  class="nav-link active"   onclick="toggleNotification()" style="color:white"><i class="fa fa-bell fa-2x"></i></a>
             </li>
         </ul>
+          
+        <!--profile-->  
+         <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item avatar dropdown">
+                <a class="nav-link " id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:60px">
+                    <img src="images/users/m4.png" class="img-fluid rounded-circle z-depth-0"></a>
+                <div class="dropdown-menu dropdown-menu-right pb-0 z-depth-1" aria-labelledby="navbarDropdownMenuLink-5">
+                    <a class="dropdown-item" href="#!/profile">My Profile</a>
+                    <a class="dropdown-item" href="#">LogOut</a>
+                </div>
+            </li>
+         </ul>
       </div>
     </nav>
 
@@ -77,7 +92,7 @@
  <script src="bower_components/angular-route/angular-route.js"></script>
  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
  <script src="app.js"></script>
- <script src="components/views/chat/chatHistory.js"></script>
+ <script src="views/chat/chatHistory.js"></script>
  <script src="view2/view2.js"></script>
 </body>
 </html>

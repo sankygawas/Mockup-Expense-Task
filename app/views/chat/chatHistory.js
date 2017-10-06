@@ -4,11 +4,11 @@ angular.module('spiderG.chatHistory', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/chatHistory', {
-    templateUrl: 'components/views/chat/chatHistory.html',
+    templateUrl: 'views/chat/chatHistory.html',
     controller: 'chatHistoryCtrl'
   })
  .when('/chatHistory/:userId',{
-      templateUrl: 'components/views/chat/chatHistory.html',
+      templateUrl: 'views/chat/chatHistory.html',
       controller: 'chatHistoryCtrl',
       controllerAs:'ctrl'
   });
@@ -56,4 +56,28 @@ angular.module('spiderG.chatHistory', ['ngRoute'])
         return ($location.path().substr(0, path.length) === path) ? 'active' : '';
     }  
     
+}])
+
+.controller('NotificationSideBarController', ['$scope','$window','$location','$routeParams','$http',function($scope,$window,$location,$routeParams,$http) {
+    
+    var self = this; // self needed because toggle is not bound to this ctrl.
+    var screenWidth;
+   
+    self.visible= true;
+    self.toggle= function () {
+                screenWidth = $window.innerWidth; //$(window).width();
+                self.visible = !self.visible; // toggle visibility
+                self.largeScreen = ( screenWidth >= 768 );
+    }
+
+    /*$http.get("data/users.json").then(function(response){
+         self.users = response.data;
+       
+    });
+    
+    $scope.getClass = function (path) {
+        console.log($location.path().substr(0, path.length) === path)
+        return ($location.path().substr(0, path.length) === path) ? 'active' : '';
+    }  
+    */
 }]);
