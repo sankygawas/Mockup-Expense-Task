@@ -1,12 +1,46 @@
-<div class="chatSidebar-content float-left card"  ng-show="ctrl.visible" ng-class="{'chatSidebar-content-animation': ctrl.largeScreen}">
+<div class=" chatSidebar-content float-left">
     
+    <!--loggedInUser-->
+    <div class=" grey lighten-3 card px-0 py-0 "  ng-show="ctrl.visible" ng-class="{'chatSidebar-content-animation': ctrl.largeScreen}">
+     
+        <a href="#" >
+        <div class="media user py-2 editUser" >
+                <img class=" mr-3 img-fluid rounded-circle avatar" src="../../../images/users/m4.png" alt="Generic placeholder image" >
+                <div class="media-body ">
+                    <p class="mt-0 mb-1 lead" >My Name</p>
+                      <!--    <h6>+</h6>     -->
+                    <small>+9029506985</small> 
+                </div>
+              </div>
+        </a>
+    </div>
+
+     <!--start  chat-->
+    <div class="card px-0 py-0"  ng-show="ctrl.visible" ng-class="{'chatSidebar-content-animation': ctrl.largeScreen}">
+   
+    <a href="#" >
+    <div class="px-0 py-0">
+         <div class="media user py-2" >
+           <i class="fa fa-comments fa-2x"></i>
+            <div class="media-body ">
+                <p class="mt-0 mb-1 lead text-center" >Start Chat</p>
+                 
+            </div>
+          </div>
+        </div>
+    </a>
+    </div>
+    
+    <!--all users-->
+        <div class="card px-0 py-0"  ng-show="ctrl.visible" ng-class="{'chatSidebar-content-animation': ctrl.largeScreen}">
     <div ng-repeat="user in ctrl.users">
         <a href="#!/chatHistory/{{user.id}}" >
-           <div class="media">
-            <img class="d-flex mr-3 img-fluid rounded-circle avatar" ng-src="../../../images/users/{{user.image}}.png" alt="Generic placeholder image" >
-            <div class="media-body">
-                <h5 class="mt-0" >{{user.userName}}</h5>
-                            +919028506985
+           <div class="media user py-2" ng-class="getClass('/chatHistory/{{user.id}}')" >
+            <img class=" mr-3 img-fluid rounded-circle avatar" ng-src="../../../images/users/{{user.image}}.png" alt="Generic placeholder image" >
+            <div class="media-body ">
+                <p class="mt-0 mb-1 lead" >{{user.userName}}</p>
+                  <!--    <h6>+</h6>     -->
+                <small>{{user.mobile}}</small> <div class="text-right float-right"><small >{{user.date}}</small></div>
             </div>
           </div>
        </a>
@@ -14,3 +48,4 @@
     
       
    </div>
+</div>    

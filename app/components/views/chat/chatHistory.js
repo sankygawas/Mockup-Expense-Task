@@ -51,4 +51,9 @@ angular.module('spiderG.chatHistory', ['ngRoute'])
        
     });
     
+    $scope.getClass = function (path) {
+        console.log($location.path().substr(0, path.length) === path)
+        return ($location.path().substr(0, path.length) === path) ? 'active' : '';
+    }  
+    
 }]);
