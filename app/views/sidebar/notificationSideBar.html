@@ -1,24 +1,46 @@
-<!--<div class="notificationSidebar-content float-right card"  ng-show="NotificationCtrl.visible" ng-class="{'notificationSidebar-content-animation': NotificationCtrl.largeScreen}">
-    I'm a Notification
-</div>-->
 
 <div class=" notificationSidebar-content  float-right " >
     
     <!--Expense-->
-    <div class="card p-0 z-depth-0"  ng-show="notificationBarCntrl.visible" ng-class="{'notificationSidebar-content-animation': notificationBarCntrl.largeScreen}">
+    <div class="card p-0 z-depth-0 accordion border"  ng-show="notificationBarCntrl.visible" ng-class="{'notificationSidebar-content-animation': notificationBarCntrl.largeScreen}">
      
-        <a href="#" >
-        <div class="media user py-2 editUser" >
-                <img class=" mr-3 img-fluid rounded-circle avatar" src="../../images/expense.png" alt="Generic placeholder image" >
-                <div class="media-body ">
-                    <p class="mt-0 mb-1 lead" >Expense</p>
-                      <!--    <h6>+</h6>     -->
-                    <small>A short Subtitle</small> 
+            <div class="media user py-2 editUser expense-header collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
+                    <img class=" mr-3 img-fluid rounded-circle avatar" src="../../images/expense.png" alt="Generic placeholder image" >
+                    <div class="media-body ">
+                        <p class="mt-0 mb-1 lead" >Expense</p>
+                        
+                          <!--    <h6>+</h6>     -->
+                        <small>A short Subtitle</small> 
+                    </div>
+            </div>
+            
+            <div id="collapseOne" class="card-block collapse">
+                
+              <ul class="list-group">
+                  <li class="list-group-item border-0 rounded add-expense">
+                    <a href="#!/addExpense" class="blue-grey-text" >
+                        <div class="z-depth-0 lead text-black">Add Expense <i class="fa fa-plus-circle "></i></div>
+                    </a>
+                  </li>
+                  <li class="list-group-item border rounded border-light grey lighten-3 ">Cleaning<span class="text-right"> Rs 500</span></li>
+                  <li class="list-group-item border rounded  border-light grey lighten-3 ">Fuel</li>
+                  <li class="list-group-item border rounded border-light grey lighten-3 ">Bills</li>
+              </ul>
+            </div>
+            
+        
+        <!--    <div class="card m-b-0 accordion">
+                <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    <a class="card-title">
+                        Item 1
+                    </a>
                 </div>
-              </div>
-        </a>
-
-         <!--Task-->
+            </div>
+-->
+     </div>
+    
+    <!--Task-->
+     <div class="card p-0 z-depth-0 border"  ng-show="notificationBarCntrl.visible" ng-class="{'notificationSidebar-content-animation': notificationBarCntrl.largeScreen}">
       <a href="#" >
         <div class="media user py-2 editUser" >
                 <img class=" mr-3 img-fluid rounded-circle avatar" src="../../images/Task.PNG" alt="Generic placeholder image" >
@@ -32,5 +54,18 @@
     
  
       
+   </div>
+    
+    <div class="card p-0 z-depth-0 border"  ng-show="notificationBarCntrl.visible" ng-class="{'notificationSidebar-content-animation': notificationBarCntrl.largeScreen}">
+      <a href="#" >
+        <div class="media user py-2 editUser mb-4 pb-4" >
+                <img class=" mr-3 img-fluid rounded-circle avatar" src="../../images/Task.PNG" alt="Generic placeholder image" >
+                <div class="media-body ">
+                    <p class="mt-0 mb-1 lead" >&nbsp;</p>
+                      <!--    <h6>+</h6>     -->
+                    <small></small> 
+                </div>
+              </div>
+        </a>
    </div>
 </div>    

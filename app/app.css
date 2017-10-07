@@ -56,10 +56,10 @@ body {
   margin: 0;
   padding-bottom: 6rem;
   min-height: 100%;
-  font-family: "Helvetica Neue", Arial, sans-serif;
   background-color: #e2e1e0;
    /*  background-color: white;*/
      overflow-x: hidden;
+    background-image: url(images/bg.png);
 }
 
 @media (min-width: 1200px){
@@ -173,10 +173,10 @@ body {
     background-color: #eee ;
 }
 
-.editUser:hover{
+/*.editUser:hover{
     background-color:#01579b;
     color:white;
-} 
+}*/ 
 
 
 .chatSidebar-content .active{
@@ -195,6 +195,26 @@ body {
     -ms-animation: fadeIn 0.5s;
     -o-animation: fadeIn 0.5s;
     animation: fadeIn 0.5s;
+}
+
+
+/*notification*/
+.accordion .expense-header:after {
+    font-family: 'FontAwesome';  
+    content: "\f068";
+    float: right; 
+}
+.accordion .expense-header.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\f067"; 
+}
+.add-expense{
+    color:white;
+ padding-left:20%;
+}
+.add-expense:hover{
+    color:white;
+    background-color: lightblue;
 }
 
 
