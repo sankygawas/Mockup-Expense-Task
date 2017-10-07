@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>SpiderG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="bower_components/MDBootstrap/css/mdb.min.css" rel="stylesheet">
@@ -71,7 +71,7 @@
       <chat-sidebar></chat-sidebar>
     </div>
 
-    <div id="notificationSideBar" >
+    <div id="notificationSideBar"  ng-controller="AddExpenseController as addCntrl" >
       <notification-sidebar></notification-sidebar>
     </div>
     
@@ -93,8 +93,9 @@
  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
  <script src="app.js"></script>
  <script src="views/chat/chatHistory.js"></script>
+ <script src="views/expense/addexpense.js"></script>
  <script src="views/sidebar/chatSideBar.js"></script>
-    <script src="views/sidebar/notificationSideBar.js"></script>
+ <script src="views/sidebar/notificationSideBar.js"></script>
  <script src="view2/view2.js"></script>
 </body>
 </html>

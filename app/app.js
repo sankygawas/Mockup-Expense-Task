@@ -23,12 +23,11 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
         templateUrl:'views/profile/profile.html'
   })
   .when('/addExpense',{
-        templateUrl:'views/expense/addexpense.html'
+        templateUrl:'views/expense/addexpense.html',
+      controller:'AddExpenseController'
   })
   .otherwise({redirectTo: '/chatHistory/1'});
 }])
-
-
 
 //this method written out of angular scope to toggle sidebar from top navbar. 
 function toggleChat(){

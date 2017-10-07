@@ -13,6 +13,25 @@ angular.module('spiderG')
                 self.visible = !self.visible; // toggle visibility
                 self.largeScreen = ( screenWidth >= 768 );
     }
+    
+    
+    //get all expenses from json
+    $http.get('data/expenses.json').then(function(response){
+      self.expenses = response.data;
+    });
+    
+    /*self.addExpense = function(expenseName){
+        console.log(expenseName);
+    }*/
+    
+/*    self.newName = function() {
+       $scope.lineChartData={a:21, b:"done;lsd,;lsmd"};
+        console.log( $scope.lineChartData);
+    }
+        
+$scope.lineChartData={a:2, b:"test"};
+//    self.lineChartData={a:2, b:"test"};
+        */
 
 }])
 
@@ -21,7 +40,13 @@ angular.module('spiderG')
         restrict: 'E',
         templateUrl: 'views/sidebar/notificationSideBar.html',
         controller: 'NotificationSideBarController',
-        controllerAs:'notificationBarCntrl'
+        controllerAs:'notificationBarCntrl',
+        /*scope:{name:'='},*/
+         link: function(scope, elem, attrs) {
+//            scope.$watch(attrs.name, function(value) {
+//        	console.log(value);
+        }
+        
     };
 
     return directive;

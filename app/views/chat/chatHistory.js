@@ -21,7 +21,7 @@ angular.module('spiderG')
        $scope.users = response.data;
         $scope.user = $scope.getUser($routeParams.userId);
         //$scope.userName = user.userName;
-        console.log($scope.user);
+        //console.log($scope.user);
     });
     
      //get user by UserId
