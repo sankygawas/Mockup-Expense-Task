@@ -1,5 +1,10 @@
 /* app css stylesheet */
 
+/* screen flicker fix*/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -38,15 +43,7 @@
     
 }
 
-.navbar{
-    background: rgba(89,150,194,1);
-    background: -moz-linear-gradient(left, rgba(89,150,194,1) 0%, rgba(31,77,121,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(89,150,194,1)), color-stop(100%, rgba(31,77,121,1)));
-    background: -webkit-linear-gradient(left, rgba(89,150,194,1) 0%, rgba(31,77,121,1) 100%);
-    background: -o-linear-gradient(left, rgba(89,150,194,1) 0%, rgba(31,77,121,1) 100%);
-    background: -ms-linear-gradient(left, rgba(89,150,194,1) 0%, rgba(31,77,121,1) 100%);
-    background: linear-gradient(to right, rgba(89,150,194,1) 0%, rgba(31,77,121,1) 100%);
-}
+
 .dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:focus, .dropdown .dropdown-menu .dropdown-item:hover{
     background-color:#01579b; 
     transition:all 0.3s;
@@ -183,13 +180,14 @@ body {
 }
 
 .graded-bg{
-    background: rgba(89,150,194,1);
+/*    background: rgba(89,150,194,1);
     background: -moz-linear-gradient(left, rgba(89,150,194,1) 0%, rgba(31,77,121,1) 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, rgba(89,150,194,1)), color-stop(100%, rgba(31,77,121,1)));
     background: -webkit-linear-gradient(left, rgba(89,150,194,1) 0%, rgba(31,77,121,1) 100%);
     background: -o-linear-gradient(left, rgba(89,150,194,1) 0%, rgba(31,77,121,1) 100%);
     background: -ms-linear-gradient(left, rgba(89,150,194,1) 0%, rgba(31,77,121,1) 100%);
     background: linear-gradient(to right, rgba(89,150,194,1) 0%, rgba(31,77,121,1) 100%);
+    */
 }
 .user:hover{
     background-color: #eee ;
@@ -239,5 +237,9 @@ body {
     background-color: lightblue;
 }
 
-
+/* login*/
+.login-page{
+padding-top:150px;
+    padding-bottom:150px;
+}
 
