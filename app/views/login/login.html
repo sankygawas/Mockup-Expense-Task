@@ -1,10 +1,9 @@
 
 <div class="container login-page mx-auto ">
-	<div class="row">
-		<div class="col ">
 
             <!-- Form login -->
-            <form name="form" ng-submit="login()" role="form">
+            <form name="form" ng-submit="login()" role="form" class="w-50 mx-auto">
+                 <div ng-show="error" class="alert alert-danger">{{error}}</div>
                 <p class="h5 text-center mb-4">Sign in</p>
 
                 <div class="md-form">
@@ -26,11 +25,9 @@
                     <img ng-if="dataLoading" width=5% src="images/loading.gif"/>
                  <!--   <button class="btn btn-default">Login</button>-->
                 </div>
-                <div ng-show="error" class="alert alert-danger">{{error}}</div>
+               
             </form>
                            
-	   </div>
-</div>
 </div>
 
 

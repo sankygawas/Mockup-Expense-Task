@@ -1,24 +1,21 @@
 <div class=" chatSidebar-content float-left">
     
     <!--loggedInUser-->
-    <div class=" card px-0 py-0 z-depth-0 "  ng-show="ctrl.visible" ng-class="{'chatSidebar-content-animation': ctrl.largeScreen}">
+    <div class=" card px-0 py-0 z-depth-1 "  ng-show="ctrl.visible" ng-class="{'chatSidebar-content-animation': ctrl.largeScreen}">
      
         <a href="#!/profile" >
         <div class="media user py-2 pl-4 editUser  text-white default-color" >
                 <img class=" mr-3 img-fluid rounded-circle avatar" src="../../../images/users/m4.png" alt="Generic placeholder image" >
                 <div class="media-body ">
-                    <p class="mt-0 mb-1 lead" >My Name</p>
+                    <p class="mt-0 mb-1 h5" >My Name</p>
                       <!--    <h6>+</h6>     -->
                     <small>+9029506985</small> 
                 </div>
               </div>
         </a>
-    </div>
-
-     <!--start  chat-->
-    <div class="card px-0 py-0 z-depth-0 mt-2 "  ng-show="ctrl.visible" ng-class="{'chatSidebar-content-animation': ctrl.largeScreen}">
    
-    <a href="#!/chatHistory/{{user.id}}" >
+   
+    <a href="#!/chatHistory/1" >
     <div class="px-0 py-0">
          <div class="media user py-2 pl-4" >
            <i class="fa fa-comments fa-2x"></i>
@@ -29,10 +26,7 @@
           </div>
         </div>
     </a>
-    </div>
-    
-  <!--  all users-->
-        <div class="card px-0 py-0 z-depth-0 mt-2   "  ng-show="ctrl.visible" ng-class="{'chatSidebar-content-animation': ctrl.largeScreen}">
+
     <div ng-repeat="user in ctrl.users">
         <a href="#!/chatHistory/{{user.id}}" >
            <div class="media user py-2 pl-4" ng-class="getClass('/chatHistory/{{user.id}}')" >

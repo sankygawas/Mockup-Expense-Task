@@ -4,7 +4,6 @@
 
 angular.module('spiderG', [
   'ngRoute',
-  'myApp.view2',
   'ngAnimate',
   'Authentication',
   'ngCookies'
@@ -29,11 +28,7 @@ angular.module('spiderG', [
 
 .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
-    
-//  $routeProvider.when('/', {
-//    templateUrl: 'views/login/login.html',
-//    controller: 'loginController'
-//  })
+
   $routeProvider.when('/login', {
     templateUrl: 'views/login/login.html',
     controller: 'LoginController'
@@ -52,25 +47,12 @@ angular.module('spiderG', [
   })
   .when('/addExpense',{
         templateUrl:'views/expense/addexpense.html',
-      
+  })
+  .when('/addTask',{
+        templateUrl:'views/task/addtask.html',
   })
     .otherwise({redirectTo: '/login'});
-  /*.when('/main', {
-    templateUrl: 'views/main/main.html',
-    controller: 'mainController'
-  })
 
-  .when('/chatHistory', {
-    templateUrl: 'views/chat/chatHistory.html',
-    controller: 'chatHistoryCtrl'
-  })
- .when('/chatHistory/:userId',{
-      templateUrl: 'views/chat/chatHistory.html',
-      controller: 'chatHistoryCtrl',
-      controllerAs:'ctrl'
-  })
-  */
- // .otherwise({redirectTo: '/chatHistory/1'});
 }])
 
 

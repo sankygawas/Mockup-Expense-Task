@@ -2,85 +2,105 @@
 
 angular.module('spiderG')
 
+//controller notification sidebar to toggle on off
 .controller('NotificationSideBarController', ['$scope','$window','$location','$routeParams','$http',function($scope,$window,$location,$routeParams,$http) {
-    
-    var self = this; // self needed because toggle is not bound to this ctrl.
+    var self = this; 
     var screenWidth;
-   
     self.visible= true;
     self.toggle= function () {
-                screenWidth = $window.innerWidth; //$(window).width();
+                screenWidth = $window.innerWidth;
                 self.visible = !self.visible; // toggle visibility
                 self.largeScreen = ( screenWidth >= 768 );
     }
     
-    
     //get all expenses from json
     $http.get('data/expenses.json').then(function(response){
       self.expenses = response.data;
-        $scope.expenses =  response.data;
-        
+      $scope.expenses =  response.data;
     });
     
+    //get all tasks from json
+    $http.get('data/tasks.json').then(function(response){
+      self.tasks = response.data;
+      $scope.tasks =  response.data;
 
-       self.addExpense = function(){
-           var name = $scope.name;
-           var date = $scope.date;
-           var cost = $scope.cost;
-           var expense = {'name':name,'inr':cost,'date':date}
-            $scope.expenses.push(expense);
-       /* console.log( $scope.expenses);*/
-           
-        
-    }
+    });
     
-
 }])
 
+
+//Directive for notification sidebar to toggle on off
 .directive('notificationSidebar', function ($compile) {
     var directive = {
         restrict: 'E',
         templateUrl: 'views/sidebar/notificationSideBar.html',
         transclude: true,
         controller: 'NotificationSideBarController',
-        controllerAs:'notificationBarCntrl',
-    
-         link: function(scope, element, attrs,ctrl) {
-        }
+        controllerAs:'notificationBarCntrl'
         
     };
 
     return directive;
 })
 
+//directive for  expense object
 .directive('expensedirective', function ($compile) {
     var directive = {
         restrict: 'E',
         templateUrl: 'views/sidebar/expenseTemplate.html',
-        scope:{expense:'=',isAdd:'@'},
-        link: function(scope, element, attrs) {
-                
-        }
+        scope:{expense:'='}
     };
 
     return directive;
 })
 
-
+//controller for exppenses
 .controller('ExpenseController',function($scope,$compile,$element,$location){
-        $scope.isAdd = true;
+    //function to add expense to Dom
         this.addExpense = function () {
-             var name = $scope.name;
+            var name = $scope.name;
             var date = $scope.date;
             var cost = $scope.cost
             $scope.expense = {'name':name,'inr':cost,'date':date}
-            
+            console.log($scope);
             var ele = document.getElementById('expenseList');
             
-            angular.element(ele).append( $compile("<expensedirective expense='expense' isAdd=true></expensedirective>")($scope) )
-            alert('Expense Added successfully')
+            //add expense to dom
+            angular.element(ele).append( $compile("<expensedirective expense='expense' ></expensedirective>")($scope) )
             $location.path('/chatHistory/1');
+            alert('Expense Added successfully')
         
         };
 })
+
+
+//directive for  task object
+.directive('taskdirective', function ($compile) {
+    var directive = {
+        restrict: 'E',
+        templateUrl: 'views/sidebar/taskTemplate.html',
+        scope:{task:'='}
+    };
+
+    return directive;
+})
+
+//controller for tasks
+.controller('TaskController',function($scope,$compile,$element,$location){
+    //function to add task to Dom
+        this.addTask = function () {
+            var task = $scope.task;
+            var date = $scope.date;
+            var status = $scope.status
+            $scope.task = {'task':task,'status':status,'date':date}
+            var ele = document.getElementById('taskList');
+            console.log($scope.task)    ;
+            //add expense to dom
+            angular.element(ele).append( $compile("<taskdirective task='task' ></taskdirective>")($scope) )
+            $location.path('/chatHistory/1');
+            alert('Task Added successfully')
+        
+        };
+})
+
 

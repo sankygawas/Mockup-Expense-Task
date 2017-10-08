@@ -45,7 +45,7 @@
 
 
 .dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:focus, .dropdown .dropdown-menu .dropdown-item:hover{
-    background-color:#01579b; 
+    background-color:#00897b    ; 
     transition:all 0.3s;
 }
 
@@ -148,7 +148,7 @@ body {
 }
 .card-header{
  
-    color: white;
+  /*  color: white;*/
 }
 .card-block{
     font-size: 14px;
@@ -222,7 +222,9 @@ body {
 .accordion .expense-header:after {
     font-family: 'FontAwesome';  
     content: "\f068";
-    float: right; 
+    float: right;
+    margin-top:10px;
+    margin-right:10px;
 }
 .accordion .expense-header.collapsed:after {
     /* symbol for "collapsed" panels */
@@ -239,7 +241,7 @@ body {
 
 /* login*/
 .login-page{
-padding-top:150px;
+padding-top:250px;
     padding-bottom:150px;
 }
 

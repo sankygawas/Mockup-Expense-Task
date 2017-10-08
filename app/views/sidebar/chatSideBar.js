@@ -14,13 +14,13 @@ angular.module('spiderG')
                 self.largeScreen = ( screenWidth >= 768 );
     }
 
+    //get all users to display
     $http.get("data/users.json").then(function(response){
          self.users = response.data;
-       
     });
     
+    //check active link
     $scope.getClass = function (path) {
-    
         return ($location.path().substr(0, path.length) === path) ? 'active' : '';
     }  
     

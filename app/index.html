@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="app.css">
 
 </head>
-<body class="light-grey">
+<body class="grey lighten-5">
 
 <div ng-if="location.path() !== '/login'" ng-cloak>
     <nav class="navbar navbar-expand-md navbar-dark  mb-2 py-0 z-depth-1 default-color">
@@ -27,7 +27,7 @@
         <!--chatbar Toggle-->  
       <div class="collapse navbar-collapse" id="navbarsExample04">
         <ul class="navbar-nav chatToggle">
-           <li class="nav-item  d-flex flex-row-reverse w-25 ml-0 justify-content-center"  >
+           <li class="nav-item  ml-0 justify-content-center"  >
             <a  class="nav-link active"  onclick="toggleChat()" style="color:white"><i class="fa fa-bars fa-2x"></i></a>
           </li>
         </ul>
@@ -47,7 +47,7 @@
             <li class="nav-item avatar dropdown">
                 <a class="nav-link " id="navbarDropdownMenuLink-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:60px">
                     <img src="images/users/m4.png" class="img-fluid rounded-circle z-depth-0"></a>
-                <div class="dropdown-menu dropdown-menu-right pb-0 z-depth-1" aria-labelledby="navbarDropdownMenuLink-5">
+                <div class="dropdown-menu dropdown-menu-right py-0 z-depth-1" aria-labelledby="navbarDropdownMenuLink-5">
                     <a class="dropdown-item" href="#!/profile">My Profile</a>
                     <a class="dropdown-item" href="#!/login">LogOut</a>
                 </div>
@@ -82,15 +82,13 @@
  <script src="bower_components/MDBootstrap/js/mdb.min.js"></script>
  <script src="bower_components/angular/angular.js"></script>
  <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+ <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
  <script src="app.js"></script>
  <script src="views/login/authentication.js"></script>
 <script src="views/login/login.js"></script>
  <script src="views/chat/chatHistory.js"></script>
-<!-- <script src="views/expense/addexpense.js"></script>-->
  <script src="views/sidebar/chatSideBar.js"></script>
  <script src="views/sidebar/notificationSideBar.js"></script>
- <script src="view2/view2.js"></script>
 </body>
 </html>

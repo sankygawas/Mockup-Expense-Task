@@ -2,59 +2,50 @@
 <div class=" notificationSidebar-content  float-right " >
     
     <!--Expense-->
-    <div class="card p-0 z-depth-0 accordion border  "  ng-show="notificationBarCntrl.visible" ng-class="{'notificationSidebar-content-animation': notificationBarCntrl.largeScreen}">
-        <div class="media user py-2 editUser expense-header collapsed default-color text-white " data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
+    <div class="card p-0 z-depth-1 accordion   "  ng-show="notificationBarCntrl.visible" ng-class="{'notificationSidebar-content-animation': notificationBarCntrl.largeScreen}">
+        <div class="media user py-2 editUser expense-header collapsed default-color text-white " data-toggle="collapse" data-target="#collapseExpense">
                 <img class=" mr-3 img-fluid rounded-circle avatar" src="../../images/expense.png" alt="Generic placeholder image" >
                 <div class="media-body ">
-                    <p class="mt-0 mb-1 lead" >Expense</p>
+                    <p class="mt-0 mb-1 h5" >Expense</p>
 
-                      <!--    <h6>+</h6>     -->
                     <small>A short Subtitle</small> 
                 </div>
         </div>
             
-        <div id="collapseOne" class="card-block collapse">
+        <div id="collapseExpense" class="card-block collapse">
           <ul class="list-group" id="expenseList">
               <li class="list-group-item border-0 rounded add-expense">
                 <a href="#!/addExpense" class="blue-grey-text" >
                     <div class="z-depth-0 lead text-black">Add Expense <i class="fa fa-plus-circle "></i></div>
                 </a>
               </li>
-              
-             
-                 <expensedirective  expense="expense" ng-repeat="expense in expenses" ></expensedirective>
-              
+              <expensedirective  expense="expense" ng-repeat="expense in expenses" ></expensedirective>
           </ul>
         </div>
      </div>
     
-    <!--Task-->
-     <div class="card p-0 z-depth-0 border"  ng-show="notificationBarCntrl.visible" ng-class="{'notificationSidebar-content-animation': notificationBarCntrl.largeScreen}">
-      <a href="#!/addExpense" >
-        <div class="media user py-2 editUser default-color text-white" >
-                <img class=" mr-3 img-fluid rounded-circle avatar" src="../../images/Task.PNG" alt="Generic placeholder image" >
+     <!--Task-->
+     <div class="card p-0 z-depth-1 accordion   "  ng-show="notificationBarCntrl.visible" ng-class="{'notificationSidebar-content-animation': notificationBarCntrl.largeScreen}">
+        <div class="media user py-2 editUser expense-header collapsed default-color text-white " data-toggle="collapse"  data-target="#collapseTask">
+                <img class=" mr-3 img-fluid rounded-circle avatar" src="../../images/task.png" alt="Generic placeholder image" >
                 <div class="media-body ">
-                    <p class="mt-0 mb-1 lead" >Tasks</p>
-                      <!--    <h6>+</h6>     -->
-                    <small>A short subtitle</small> 
+                    <p class="mt-0 mb-1 h5" >Task</p>
+
+                    <small>A short Subtitle</small> 
                 </div>
-              </div>
-        </a>
-    
- 
-      
-   </div>
-    
-   <!-- <div class="card p-0 z-depth-0 border"  ng-show="notificationBarCntrl.visible" ng-class="{'notificationSidebar-content-animation': notificationBarCntrl.largeScreen}">
-      <a href="#" >
-        <div class="media user py-2 editUser mb-4 pb-4" >
-                <img class=" mr-3 img-fluid rounded-circle avatar" src="../../images/Task.PNG" alt="Generic placeholder image" >
-                <div class="media-body ">
-                    <p class="mt-0 mb-1 lead" >&nbsp;</p>
-                          <h6>+</h6>     
-                    <small></small> 
-                </div>
-              </div>
-        </a>
-   </div>-->
+        </div>
+            
+        <div id="collapseTask" class="card-block collapse">
+          <ul class="list-group" id="taskList">
+              <li class="list-group-item border-0 rounded add-expense">
+                <a href="#!/addTask" class="blue-grey-text" >
+                    <div class="z-depth-0 lead text-black">Add Task <i class="fa fa-plus-circle "></i></div>
+                </a>
+              </li>
+              <taskDirective  task="task" ng-repeat="task in tasks" ></taskDirective>
+          </ul>
+        </div>
+     </div>
+
+
 </div>    
