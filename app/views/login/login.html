@@ -1,0 +1,36 @@
+
+<div class="container pt-5">
+	<div class="row">
+		<div class="col ">
+
+            <!-- Form login -->
+            <form name="form" ng-submit="login()" role="form">
+                <p class="h5 text-center mb-4">Sign in</p>
+
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <input type="text" name="username" id="username" class="form-control" ng-model="username" required />
+                    <label for="username">Username</label>
+                    <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+                </div>
+
+                <div class="md-form">
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <input type="password" name="password" id="password" class="form-control" ng-model="password" required />
+                    <label for="password">Password</label>
+                    <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+                </div>
+
+                <div class="text-center">
+                     <button type="submit" ng-disabled="form.$invalid || dataLoading" class="btn btn-default">Login</button>
+                    <img ng-if="dataLoading" width=5% src="images/loading.gif"/>
+                 <!--   <button class="btn btn-default">Login</button>-->
+                </div>
+                <div ng-show="error" class="alert alert-danger">{{error}}</div>
+            </form>
+                           
+	   </div>
+</div>
+</div>
+
+<!-- Form login -->

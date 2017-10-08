@@ -3,7 +3,7 @@
 angular.module('spiderG')
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/chatHistory', {
+/*  $routeProvider.when('/chatHistory', {
     templateUrl: 'views/chat/chatHistory.html',
     controller: 'chatHistoryCtrl'
   })
@@ -11,7 +11,7 @@ angular.module('spiderG')
       templateUrl: 'views/chat/chatHistory.html',
       controller: 'chatHistoryCtrl',
       controllerAs:'ctrl'
-  });
+  });*/
 }])
 
 .controller('chatHistoryCtrl', ['$scope','$window','$location','$routeParams','$http',function($scope,$window,$location,$routeParams,$http) {
