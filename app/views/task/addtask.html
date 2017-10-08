@@ -13,18 +13,18 @@
                                 
                                 <form ng-submit="ctrl.addTask()" class="w-50 mx-auto">
                                       <div class="md-form">
-                                          <input type="text" class="form-control" id="task"  ng-model="task">
+                                          <input type="text" class="form-control" id="task"  ng-model="task" required>
                                            <label  for="task">Task Name</label>
                                       </div>
                                     
                                      <div class="md-form">
-                                        <input type="text" class="form-control" id="status"  ng-model="status">
+                                        <input type="text" class="form-control" id="status"  ng-model="status" required>
                                         <label  for="status">Status</label>
                                       </div>
                                     
                                      <div class="md-form">
                                         <label for="date">Due Date</label>
-                                         <input type="text" class="form-control " id="date"   ng-model="date">
+                                         <input type="text" class="form-control " id="date"   ng-model="date" required>
                                       </div>
                                     
                                      <div class="form-group ">

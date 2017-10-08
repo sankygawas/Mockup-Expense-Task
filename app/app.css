@@ -1,9 +1,6 @@
 /* app css stylesheet */
 
-/* screen flicker fix*/
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
-}
+
 
 .menu {
   list-style: none;
@@ -217,6 +214,10 @@ body {
     animation: fadeIn 0.5s;
 }
 
+/* screen flicker fix*/
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
 
 /*notification*/
 .accordion .expense-header:after {

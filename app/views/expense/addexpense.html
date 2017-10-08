@@ -13,18 +13,18 @@
                                 
                                 <form ng-submit="ctrl.addExpense()" class="w-50 mx-auto">
                                       <div class="md-form">
-                                          <input type="text" class="form-control" id="name" aria-describedby="emailHelp"  ng-model="name">
+                                          <input type="text" class="form-control" id="name" aria-describedby="emailHelp"  ng-model="name" required>
                                            <label  for="name">Expense Name</label>
                                       </div>
                                     
                                      <div class="md-form">
-                                        <input type="text" class="form-control" id="cost" aria-describedby="emailHelp"  ng-model="cost">
+                                        <input type="text" class="form-control" id="cost" aria-describedby="emailHelp"  ng-model="cost" required>
                                         <label  for="cost">Cost</label>
                                       </div>
                                     
                                      <div class="md-form">
                                         <label for="date">Date</label>
-                                         <input type="text" class="form-control " id="date" aria-describedby="emailHelp"  ng-model="date">
+                                         <input type="text" class="form-control " id="date" aria-describedby="emailHelp"  ng-model="date" required>
                                       </div>
                                     
                                      <div class="form-group ">
