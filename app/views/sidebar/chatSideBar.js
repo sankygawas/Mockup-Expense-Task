@@ -2,16 +2,13 @@
 
 angular.module('spiderG')
 
-.controller('chatSideBarCtrl', ['$scope','$window','$location','$routeParams','$http',function($scope,$window,$location,$routeParams,$http) {
+.controller('chatSideBarCtrl', ['$scope','$window','$location','$routeParams','$http',function($scope,$window,$location,$routeParams,$http,$rootScope) {
     
     var self = this; 
-    var screenWidth;
    
     self.visible= true;
     self.toggle= function () {
-                screenWidth = $window.innerWidth; //$(window).width();
-                self.visible = !self.visible; // toggle visibility
-                self.largeScreen = ( screenWidth >= 768 );
+          self.visible = !self.visible; // toggle visibility
     }
 
     //get all users to display
@@ -23,6 +20,8 @@ angular.module('spiderG')
     $scope.getClass = function (path) {
         return ($location.path().substr(0, path.length) === path) ? 'active' : '';
     }  
+    
+/*    console.log($rootScope.globals);*/
     
 }])
 

@@ -14,10 +14,16 @@
             
         <div id="collapseExpense" class="card-block collapse">
           <ul class="list-group" id="expenseList">
-              <li class="list-group-item border-0 rounded add-expense">
-                <a href="#!/addExpense" class="blue-grey-text" >
-                    <div class="z-depth-0 lead text-black">Add Expense <i class="fa fa-plus-circle "></i></div>
-                </a>
+              <li class="list-group-item border-0 p-0 rounded">
+                   <a href="#!/addExpense" class="blue-grey-text" >
+                       <div class="media user py-2 pl-4" >
+                           <div class="media-body  d-flex justify-content-start">
+                              <i class="fa fa-plus-circle fa-2x teal-text" aria-hidden="true"></i> 
+                              <p class="mt-0 mb-1 lead text-left pl-4 teal-text" >Add Expense  </p>
+                            </div>
+                      </div>
+                 </a>
+               
               </li>
               <expensedirective  expense="expense" ng-repeat="expense in expenses" ></expensedirective>
           </ul>
@@ -34,13 +40,19 @@
                     <small>A short Subtitle</small> 
                 </div>
         </div>
-            
+          <!--<a href="#!/addTask" class="blue-grey-text" >-->   
+         
         <div id="collapseTask" class="card-block collapse">
           <ul class="list-group" id="taskList">
-              <li class="list-group-item border-0 rounded add-expense">
-                <a href="#!/addTask" class="blue-grey-text" >
-                    <div class="z-depth-0 lead text-black">Add Task <i class="fa fa-plus-circle "></i></div>
-                </a>
+              <li class="list-group-item border-0 rounded p-0">
+                      <a href="#!/addTask" class="blue-grey-text" >
+                       <div class="media user py-2 pl-4" >
+                           <div class="media-body  d-flex justify-content-start">
+                              <i class="fa fa-plus-circle fa-2x teal-text" aria-hidden="true"></i> 
+                              <p class="mt-0 mb-1 lead text-left pl-4 teal-text" >Add Task  </p>
+                            </div>
+                      </div>
+                    </a>
               </li>
               <taskDirective  task="task" ng-repeat="task in tasks" ></taskDirective>
           </ul>

@@ -1,7 +1,7 @@
 <div class=" chatSidebar-content float-left">
     
     <!--loggedInUser-->
-    <div class=" card px-0 py-0 z-depth-1 "  ng-show="ctrl.visible" ng-class="{'chatSidebar-content-animation': ctrl.largeScreen}">
+    <div class=" card px-0 py-0 z-depth-1 "  ng-show="ctrl.visible" ng-class="{'chatSidebar-content-animation':true}">
      
         <a href="#!/profile" >
         <div class="media user py-2 pl-4 editUser  text-white default-color" >
@@ -18,9 +18,10 @@
     <a href="#!/chatHistory/1" >
     <div class="px-0 py-0">
          <div class="media user py-2 pl-4" >
-           <i class="fa fa-comments fa-2x"></i>
-            <div class="media-body ml-4">
-                <p class="mt-0 mb-1 lead text-left pl-2" >Start Chat   <i class="fa fa-plus-circle" aria-hidden="true"></i> </p>
+           <i class="fa fa-comments fa-2x teal-text"></i>
+            <div class="media-body ml-4  d-flex justify-content-between">
+                <p class="mt-0 mb-1 lead text-left pl-2 teal-text" >Start Chat  </p>
+                 <i class="fa fa-plus-circle fa-2x teal-text" aria-hidden="true"></i> 
                
             </div>
           </div>
