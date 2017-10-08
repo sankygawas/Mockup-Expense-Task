@@ -5,6 +5,4 @@ angular.module('spiderG')
         console.log($scope.name);
         
     }
-    
-    
 })

@@ -8,14 +8,28 @@
                         <h5 class="mt-0 ">Add Expense </h5>
                     </div>
                 </div>
-                            <div class="card-body">
+                            <div class="card-body" ng-controller="ExpenseController as ctrl">
                                 <!-- Form register -->
                                 
-                                <form ng-submit="addExpense()">
+                                <form ng-submit="ctrl.addExpense()">
                                       <div class="form-group ">
                                         <label class="mb-0 px-0 col-sm-2 col-form-label" for="name">Expense Name</label>
                                          <div class="col-7 pl-0 pr-0 inline-block">
                                               <input type="text" class="form-control py-0 col-sm-8 my-0" id="name" aria-describedby="emailHelp" placeholder="Expense Name" ng-model="name">
+                                          </div>
+                                      </div>
+                                    
+                                     <div class="form-group ">
+                                        <label class="mb-0 px-0 col-sm-2 col-form-label" for="cost">Cost</label>
+                                         <div class="col-7 pl-0 pr-0 inline-block">
+                                              <input type="text" class="form-control py-0 col-sm-8 my-0" id="cost" aria-describedby="emailHelp" placeholder="Cost" ng-model="cost">
+                                          </div>
+                                      </div>
+                                    
+                                     <div class="form-group ">
+                                        <label class="mb-0 px-0 col-sm-2 col-form-label" for="date">Date</label>
+                                         <div class="col-7 pl-0 pr-0 inline-block">
+                                              <input type="text" class="form-control py-0 col-sm-8 my-0" id="date" aria-describedby="emailHelp" placeholder="Date" ng-model="date">
                                           </div>
                                       </div>
                                      <!-- <div class="form-group ">

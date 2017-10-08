@@ -24,7 +24,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   })
   .when('/addExpense',{
         templateUrl:'views/expense/addexpense.html',
-      controller:'AddExpenseController'
+      
   })
   .otherwise({redirectTo: '/chatHistory/1'});
 }])

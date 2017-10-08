@@ -18,36 +18,69 @@ angular.module('spiderG')
     //get all expenses from json
     $http.get('data/expenses.json').then(function(response){
       self.expenses = response.data;
+        $scope.expenses =  response.data;
+        
     });
     
-    /*self.addExpense = function(expenseName){
-        console.log(expenseName);
-    }*/
-    
-/*    self.newName = function() {
-       $scope.lineChartData={a:21, b:"done;lsd,;lsmd"};
-        console.log( $scope.lineChartData);
-    }
+
+       self.addExpense = function(){
+           var name = $scope.name;
+           var date = $scope.date;
+           var cost = $scope.cost;
+           var expense = {'name':name,'inr':cost,'date':date}
+            $scope.expenses.push(expense);
+       /* console.log( $scope.expenses);*/
+           
         
-$scope.lineChartData={a:2, b:"test"};
-//    self.lineChartData={a:2, b:"test"};
-        */
+    }
+    
 
 }])
 
-.directive('notificationSidebar', function ($window) {
+.directive('notificationSidebar', function ($compile) {
     var directive = {
         restrict: 'E',
         templateUrl: 'views/sidebar/notificationSideBar.html',
+        transclude: true,
         controller: 'NotificationSideBarController',
         controllerAs:'notificationBarCntrl',
-        /*scope:{name:'='},*/
-         link: function(scope, elem, attrs) {
-//            scope.$watch(attrs.name, function(value) {
-//        	console.log(value);
+    
+         link: function(scope, element, attrs,ctrl) {
         }
         
     };
 
     return directive;
 })
+
+.directive('expensedirective', function ($compile) {
+    var directive = {
+        restrict: 'E',
+        templateUrl: 'views/sidebar/expenseTemplate.html',
+        scope:{expense:'=',isAdd:'@'},
+        link: function(scope, element, attrs) {
+                
+        }
+    };
+
+    return directive;
+})
+
+
+.controller('ExpenseController',function($scope,$compile,$element,$location){
+        $scope.isAdd = true;
+        this.addExpense = function () {
+             var name = $scope.name;
+            var date = $scope.date;
+            var cost = $scope.cost
+            $scope.expense = {'name':name,'inr':cost,'date':date}
+            
+            var ele = document.getElementById('expenseList');
+            
+            angular.element(ele).append( $compile("<expensedirective expense='expense' isAdd=true></expensedirective>")($scope) )
+            alert('Expense Added successfully')
+            $location.path('/chatHistory/1');
+        
+        };
+})
+

@@ -14,15 +14,16 @@
         </div>
             
         <div id="collapseOne" class="card-block collapse">
-          <ul class="list-group">
+          <ul class="list-group" id="expenseList">
               <li class="list-group-item border-0 rounded add-expense">
                 <a href="#!/addExpense" class="blue-grey-text" >
                     <div class="z-depth-0 lead text-black">Add Expense <i class="fa fa-plus-circle "></i></div>
                 </a>
               </li>
-              <li class="list-group-item border rounded border-light grey lighten-3 d-flex justify-content-between px-5" ng-repeat="expense in notificationBarCntrl.expenses">
-                  <span >{{expense.date }}</span><span>{{expense.name}}</span><span class="text-right">{{expense.inr | currency}}</span>
-              </li>
+              
+             
+                 <expensedirective  expense="expense" ng-repeat="expense in expenses" ></expensedirective>
+              
           </ul>
         </div>
      </div>
