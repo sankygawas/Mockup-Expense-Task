@@ -4,6 +4,7 @@ A mockup of Expense Task application using Angular Js
 ## Download/Install
 
 - NPM:`npm install`
+      `npm start`
 
 ## Login details
 
