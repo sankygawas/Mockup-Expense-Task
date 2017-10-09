@@ -5,12 +5,9 @@ angular.module('spiderG')
 //controller notification sidebar to toggle on off
 .controller('NotificationSideBarController', ['$scope','$window','$location','$routeParams','$http',function($scope,$window,$location,$routeParams,$http) {
     var self = this; 
-    var screenWidth;
     self.visible= true;
     self.toggle= function () {
-                screenWidth = $window.innerWidth;
                 self.visible = !self.visible; // toggle visibility
-                self.largeScreen = ( screenWidth >= 768 );
     }
     
     //get all expenses from json

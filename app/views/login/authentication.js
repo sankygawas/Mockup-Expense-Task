@@ -7,16 +7,14 @@ angular.module('Authentication',[])
  
         service.Login = function (username, password, callback) {
  
-            /* Dummy authentication for testing, uses $timeout to simulate api call
-             ----------------------------------------------*/
-            $timeout(function(){
+        $timeout(function(){
                 var response = { success: username === 'test' && password === 'test' };
                 if(!response.success) {
                     response.message = 'Username or password is incorrect';
                 }
                 console.log(response);
                 callback(response);
-            }, 1000);
+        }, 1000);
  
  
         };
@@ -40,6 +38,10 @@ angular.module('Authentication',[])
             $cookieStore.remove('globals');
             $http.defaults.headers.common.Authorization = 'Basic ';
         };
+    
+     service.getCredentials = function () {
+         return  $rootScope.globals.currentUser;
+     };
   
         return service;
     }])

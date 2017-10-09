@@ -1,16 +1,4 @@
 angular.module('spiderG')
-/*
-.controller('loginController',function($rootScope,$scope,$location){
-    $scope.isLoggedIn = false;
-    $scope.login = function(){
-        $scope.isLoggedIn = true;
-       
-        
-    }
-    
-})
-*/
-
 
 .controller('LoginController', ['$scope', '$rootScope', '$location', 'AuthenticationService', function ($scope, $rootScope, $location, AuthenticationService) {
         // reset login status
